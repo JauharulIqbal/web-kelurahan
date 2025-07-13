@@ -26,7 +26,16 @@ Route::prefix('umkm')->group(function () {
 // Admin Routes
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
-
     Route::resource('/umkm', AdminUmkmController::class)->names('admin.umkm');
+    Route::get('/umkm/export/pdf', [AdminUmkmController::class, 'exportPdf'])->name('admin.umkm.export.pdf');
 });
+
+
+
+// // Admin Routes
+// Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
+//     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+
+//     Route::resource('/umkm', AdminUmkmController::class)->names('admin.umkm');
+// });
 

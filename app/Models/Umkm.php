@@ -11,10 +11,12 @@ class Umkm extends Model
     use HasUuids, SoftDeletes;
 
     protected $table = 'umkm';
+    protected $primaryKey = 'id_umkm';
     public $incrementing = false;
     protected $keyType = 'string';
 
     protected $fillable = [
+        'id_kategori',
         'nama_usaha',
         'pemilik',
         'usia_pemilik',
@@ -23,9 +25,13 @@ class Umkm extends Model
         'alamat',
         'rt',
         'rw',
-        'kategori',
         'awal_mulai_usaha',
         'no_telp',
         'foto',
     ];
+
+    public function kategori()
+    {
+        return $this->belongsTo(KategoriUmkm::class, 'id_kategori');
+    }
 }
