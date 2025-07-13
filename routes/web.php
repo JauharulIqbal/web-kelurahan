@@ -3,11 +3,12 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Blog\HomeController;
-use App\Http\Controllers\Blog\ProfileController;
 use App\Http\Controllers\Blog\GaleriController;
 use App\Http\Controllers\Blog\KontakController;
-use App\Http\Controllers\Blog\UmkmController as BlogUmkmController;
+use App\Http\Controllers\Blog\ProfileController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\KategoriUmkmController;
+use App\Http\Controllers\Blog\UmkmController as BlogUmkmController;
 use App\Http\Controllers\Admin\UmkmController as AdminUmkmController;
 
 // BlogPages Routes
@@ -28,6 +29,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::resource('/umkm', AdminUmkmController::class)->names('admin.umkm');
     Route::get('/umkm/export/pdf', [AdminUmkmController::class, 'exportPdf'])->name('admin.umkm.export.pdf');
+    Route::resource('/kategori-umkm', KategoriUmkmController::class)->names('admin.kategori-umkm');
 });
 
 

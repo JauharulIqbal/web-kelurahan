@@ -25,7 +25,7 @@
         </li>
 
         <li class="nav-item mb-2">
-            <a href="#"
+            <a href="{{ route('admin.kategori-umkm.index') }}"
                 class="nav-link d-flex align-items-center gap-3 px-3 py-2 {{ request()->is('admin/kategori*') ? 'sidebar-active' : 'text-dark' }}">
                 <div class="icon-wrapper">
                     <i class="bi bi-tags"></i>

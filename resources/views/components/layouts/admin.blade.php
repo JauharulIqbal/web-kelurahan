@@ -24,12 +24,12 @@
 
             {{-- Main Content --}}
             <main class="flex-grow-1 p-4 bg-light">
-                <div class="container-fluid"> {{-- Tambahkan container di dalam main --}}
+                <div class="container-fluid"> 
                     {{ $slot }}
                 </div>
             </main>
         </div>
     </div>
-
+@stack('scripts')
 </body>
 </html>

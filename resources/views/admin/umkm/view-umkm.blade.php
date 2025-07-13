@@ -20,7 +20,8 @@
         <div class="table-responsive">
             <table class="table align-middle table-bordered bg-white">
                 <thead class="table-light">
-                    <tr>
+                    <tr class="text-center">
+                        <th>No.</th>
                         <th>Pemilik</th>
                         <th>Usia</th>
                         <th>Pendidikan</th>
@@ -33,37 +34,49 @@
                         <th>Awal Usaha</th>
                         <th>Kategori</th>
                         <th>Foto</th>
-                        <th>Aksi</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($umkm as $data)
                     <tr>
+                        <td class="text-center">{{ $loop->iteration + ($umkm->firstItem() - 1) }}</td>
                         <td>{{ $data->pemilik }}</td>
-                        <td>{{ $data->usia_pemilik }}</td>
+                        <td class="text-center">{{ $data->usia_pemilik }}</td>
                         <td>{{ $data->pendidikan_terakhir }}</td>
                         <td>{{ $data->nama_usaha }}</td>
                         <td>{{ $data->deskripsi }}</td>
                         <td>{{ $data->alamat }}</td>
-                        <td>{{ $data->rt }}</td>
-                        <td>{{ $data->rw }}</td>
+                        <td class="text-center">{{ $data->rt }}</td>
+                        <td class="text-center">{{ $data->rw }}</td>
                         <td>{{ $data->no_telp }}</td>
                         <td>{{ \Carbon\Carbon::parse($data->awal_mulai_usaha)->format('d/m/Y') }}</td>
                         <td>{{ $data->kategori?->nama_kategori ?? '-' }}</td>
                         <td class="text-center">
-                            <img src="{{ asset('storage/' . $data->foto) }}" alt="Foto UMKM" width="60" height="60" class="rounded-circle object-fit-cover">
-                        </td>
-                        <td>
-                            <a href="{{ route('admin.umkm.edit', $data->id_umkm) }}" class="btn btn-sm btn-info text-white mb-1">
-                                <i class="bi bi-pencil"></i>
+                            @if ($data->foto)
+                            <a href="{{ asset('storage/' . $data->foto) }}" target="_blank">
+                                <img src="{{ asset('storage/' . $data->foto) }}" alt="Foto UMKM"
+                                    width="70" height="70"
+                                    class="object-fit-cover rounded border"
+                                    style="object-fit: cover;">
                             </a>
-                            <form action="{{ route('admin.umkm.destroy', $data->id_umkm) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus?')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger">
-                                    <i class="bi bi-trash"></i>
-                                </button>
-                            </form>
+                            @else
+                            <span class="text-muted">-</span>
+                            @endif
+                        </td>
+                        <td class="text-center">
+                            <div class="d-flex flex-column align-items-center gap-1">
+                                <a href="{{ route('admin.umkm.edit', $data->id_umkm) }}" class="btn btn-sm btn-info text-white" title="Edit">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <form action="{{ route('admin.umkm.destroy', $data->id_umkm) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger" title="Hapus">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                     @endforeach

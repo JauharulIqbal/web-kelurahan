@@ -75,6 +75,14 @@
                         <small class="text-muted">(Format: jpg, jpeg, png | Maks: 2MB)</small>
                     </label>
                     <input type="file" name="foto" id="foto" class="form-control" accept=".jpg,.jpeg,.png" required>
+
+                    {{-- Preview gambar setelah dipilih --}}
+                    <div class="mt-2" id="preview-container" style="display: none;">
+                        <small class="text-muted">Preview Foto:</small><br>
+                        <a id="preview-link" href="#" target="_blank">
+                            <img id="preview-image" src="#" alt="Preview Foto" style="max-height: 100px; max-width: 100px; object-fit: cover; border: 1px solid #ccc;">
+                        </a>
+                    </div>
                 </div>
 
                 <div class="col-12 d-flex justify-content-end">
@@ -84,4 +92,21 @@
             </div>
         </form>
     </div>
+
+    {{-- Script preview --}}
+    @push('scripts')
+    <script>
+        document.getElementById('foto').addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const url = URL.createObjectURL(file);
+                document.getElementById('preview-container').style.display = 'block';
+                document.getElementById('preview-link').href = url;
+                document.getElementById('preview-image').src = url;
+            } else {
+                document.getElementById('preview-container').style.display = 'none';
+            }
+        });
+    </script>
+    @endpush
 </x-layouts.admin>
