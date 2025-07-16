@@ -20,7 +20,7 @@ class UmkmController extends Controller
                 ->orWhere('pemilik', 'like', '%' . $request->search . '%');
         }
 
-        $umkm = $umkm = $query->with('kategori')->latest()->paginate(10);
+        $umkm = $umkm = $query->with('kategori')->oldest()->paginate(10);
 
         return view('admin.umkm.view-umkm', compact('umkm'));
     }

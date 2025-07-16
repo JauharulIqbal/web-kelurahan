@@ -14,13 +14,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            KategoriUmkmSeeder::class, 
-            UmkmSeeder::class, 
-        ]);
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            AdminSeeder::class,
+            KategoriUmkmSeeder::class,
+            UmkmSeeder::class,
         ]);
     }
 }

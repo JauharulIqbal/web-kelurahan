@@ -29,22 +29,10 @@ body {
     color: white !important;
     font-weight: 600;
     border-radius: 0.75rem;
-    /* lebih kotak, tidak oval */
     position: relative;
     padding: 0.5rem 1rem;
     margin-right: 0.25rem;
 }
-
-/* .nav-link.sidebar-active::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.75rem;
-    height: 60%;
-    width: 4px;
-    background-color: white;
-    border-radius: 2px;
-} */
 
 /* ---------------------- */
 /* Sidebar : ICON WRAPPER */
@@ -73,4 +61,158 @@ body {
 
 .nav-link.sidebar-active .icon-wrapper i {
     color: #0d6efd;
+}
+
+/* ---------------------- */
+/* Views: PAGINATION      */
+/* ---------------------- */
+.page-item.active .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: #fff;
+}
+
+.page-link {
+    color: #0d6efd;
+    border-radius: 4px;
+}
+
+
+/* ---------------------- */
+/* Login Background       */
+/* ---------------------- */
+body.login-page {
+    background-color: #e8f0fe;
+}
+
+.w-55 {
+    width: 55% !important;
+}
+
+.w-45 {
+    width: 45% !important;
+}
+
+
+/* ---------------------- */
+/* LOGIN BUTTON           */
+/* ---------------------- */
+/* Awalnya tombol login warna putih */
+.login-btn {
+    color: white !important;
+    border-color: white !important;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+/* Saat di-scroll: ubah warna jadi biru */
+.navbar-scrolled .login-btn {
+    color: #0d6efd !important;
+    border-color: #0d6efd !important;
+    background-color: white;
+}
+
+/* Hover efek tetap konsisten */
+.login-btn:hover {
+    background-color: #0d6efd !important;
+    color: white !important;
+    border-color: #0d6efd !important;
+}
+
+
+/* ---------------------- */
+/* Stat Card Style Update */
+/* ---------------------- */
+.stat-card {
+    background: #fff;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.stat-card .card-body {
+    padding: 1.25rem 1.5rem;
+}
+
+.stat-title {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.stat-icon {
+    font-size: 1.75rem;
+}
+
+.stat-footer {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.text-adminkategori {
+    color: #f4a100;
+}
+.text-adminumkm {
+    color: #3366ff;
+}
+
+.bg-adminkategori {
+    background-color: #f4a100 !important;
+    color: #fdfdfd !important;
+}
+.bg-adminumkm {
+    background-color: #3366ff !important;
+    color: #fdfdfd !important;
+}
+
+/* Donut Chart Box Style (Serupa Card Statistik) */
+.dot-legend {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+
+.dot-color-0 { background-color: #0d6efd; }
+.dot-color-1 { background-color: #198754; }
+.dot-color-2 { background-color: #ffc107; }
+.dot-color-3 { background-color: #dc3545; }
+.dot-color-4 { background-color: #6f42c1; }
+.dot-color-5 { background-color: #20c997; }
+.dot-color-6 { background-color: #fd7e14; }
+.dot-color-7 { background-color: #6610f2; }
+.dot-color-8 { background-color: #0dcaf0; }
+.dot-color-9 { background-color: #6c757d; }
+
+.text-color-0 { color: #0d6efd; }
+.text-color-1 { color: #198754; }
+.text-color-2 { color: #ffc107; }
+.text-color-3 { color: #dc3545; }
+.text-color-4 { color: #6f42c1; }
+.text-color-5 { color: #20c997; }
+.text-color-6 { color: #fd7e14; }
+.text-color-7 { color: #6610f2; }
+.text-color-8 { color: #0dcaf0; }
+.text-color-9 { color: #6c757d; }
+
+
+
+
+/* ---------------------- */
+/* BLOG CSS               */
+/* ---------------------- */
+
+.carousel-caption {
+    top: 0;
+    bottom: 0;
 }

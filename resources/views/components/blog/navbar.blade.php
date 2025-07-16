@@ -1,50 +1,76 @@
-<nav class="bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16 items-center">
-            {{-- Logo / Brand --}}
-            <div class="flex items-center">
-                <a href="{{ url('/') }}" class="text-lg font-bold text-blue-600">UMKM Kelurahan</a>
+<nav id="navbarMain" class="navbar navbar-expand-lg fixed-top navbar-dark bg-transparent transition">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="{{ url('/') }}">UMKM Kelurahan</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="d-flex align-items-center">
+            <!-- Menu utama -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/profile') }}">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/galeri') }}">Galeri</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            UMKM
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ url('/umkm/jasa') }}">UMKM Jasa</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/umkm/makanan') }}">UMKM Makanan</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/umkm/minuman') }}">UMKM Minuman</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/kontak') }}">Kontak</a></li>
+                </ul>
             </div>
 
-            {{-- Menu --}}
-            <div class="hidden md:flex space-x-6 items-center">
-                <a href="{{ url('/') }}" class="hover:text-blue-600 text-sm">Beranda</a>
-                <a href="{{ url('/profile') }}" class="hover:text-blue-600 text-sm">Profil</a>
-                <a href="{{ url('/galeri') }}" class="hover:text-blue-600 text-sm">Galeri</a>
-
-                {{-- Dropdown UMKM --}}
-                <div class="relative group">
-                    <button
-                        class="text-sm hover:text-blue-600 focus:outline-none flex items-center space-x-1">
-                        <span>UMKM</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div
-                        class="absolute top-full mt-2 w-40 bg-white border rounded shadow-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all">
-                        <a href="{{ url('/umkm/jasa') }}" class="block px-4 py-2 text-sm hover:bg-gray-100">UMKM Jasa</a>
-                        <a href="{{ url('/umkm/makanan') }}" class="block px-4 py-2 text-sm hover:bg-gray-100">UMKM Food</a>
-                        <a href="{{ url('/umkm/minuman') }}" class="block px-4 py-2 text-sm hover:bg-gray-100">UMKM Drink</a>
-                    </div>
-                </div>
-
-                <a href="{{ url('/kontak') }}" class="hover:text-blue-600 text-sm">Kontak</a>
-            </div>
-
-            {{-- Mobile Menu Placeholder (optional) --}}
-            <div class="md:hidden">
-                <button class="text-gray-500 hover:text-gray-700">
-                    <!-- icon hamburger -->
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
+            <!-- Tombol Login -->
+            <div class="ms-4 d-none d-lg-block">
+                <a href="{{ route('login') }}"
+                    class="btn btn-outline-light border border-white rounded-pill px-4 py-1 fw-semibold login-btn transition">
+                    Login
+                </a>
             </div>
         </div>
+
     </div>
 </nav>
+
+<style>
+    .transition {
+        transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .navbar-scrolled {
+        background-color: white !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-scrolled .nav-link,
+    .navbar-scrolled .navbar-brand {
+        color: #000 !important;
+    }
+
+    .navbar-scrolled .nav-link:hover {
+        color: #0d6efd !important;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const navbar = document.getElementById("navbarMain");
+
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 20) {
+                navbar.classList.add("navbar-scrolled", "navbar-light");
+                navbar.classList.remove("navbar-dark", "bg-transparent");
+            } else {
+                navbar.classList.remove("navbar-scrolled", "navbar-light");
+                navbar.classList.add("navbar-dark", "bg-transparent");
+            }
+        });
+    });
+</script>

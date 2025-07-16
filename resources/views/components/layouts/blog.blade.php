@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title ?? 'UMKM Kelurahan' }}</title>
-    @vite('resources/css/app.css')
+
+    {{-- Bootstrap CSS CDN --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
+<body class="bg-light">
+
     <x-blog.navbar />
-    <main class="min-h-screen py-8 px-4">
+
+    <main class="min-vh-100">
         {{ $slot }}
     </main>
+
     <x-blog.footer />
+
+    {{-- Bootstrap JS Bundle --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
