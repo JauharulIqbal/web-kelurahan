@@ -210,5 +210,65 @@ class UmkmSeeder extends Seeder
             'no_telp' => '08987654321',
             'foto' => 'foto/freshprinting.jpg'
         ]);
+        Umkm::create([
+            'id_umkm' => Str::uuid(),
+            'id_kategori' => $kategoriJasa->id_kategori,
+            'nama_usaha' => 'Fresh Printing',
+            'pemilik' => 'Bambang Abadi',
+            'usia_pemilik' => 39,
+            'pendidikan_terakhir' => 'SMA',
+            'deskripsi' => 'Jasa printing 1 jam jadi.',
+            'alamat' => 'Jl. Menanggal Barat No. 12',
+            'rt' => '01',
+            'rw' => '07',
+            'awal_mulai_usaha' => '2018-06-01',
+            'no_telp' => '08987654321',
+            'foto' => 'foto/freshprinting.jpg'
+        ]);
+        Umkm::create([
+            'id_umkm' => Str::uuid(),
+            'id_kategori' => $kategoriJasa->id_kategori,
+            'nama_usaha' => 'Fresh Printing',
+            'pemilik' => 'Bambang Abadi',
+            'usia_pemilik' => 39,
+            'pendidikan_terakhir' => 'SMA',
+            'deskripsi' => 'Jasa printing 1 jam jadi.',
+            'alamat' => 'Jl. Menanggal Barat No. 12',
+            'rt' => '01',
+            'rw' => '02',
+            'awal_mulai_usaha' => '2018-06-01',
+            'no_telp' => '08987654321',
+            'foto' => 'foto/freshprinting.jpg'
+        ]);
+        Umkm::create([
+            'id_umkm' => Str::uuid(),
+            'id_kategori' => $kategoriJasa->id_kategori,
+            'nama_usaha' => 'Fresh Printing',
+            'pemilik' => 'Bambang Abadi',
+            'usia_pemilik' => 39,
+            'pendidikan_terakhir' => 'SMA',
+            'deskripsi' => 'Jasa printing 1 jam jadi.',
+            'alamat' => 'Jl. Menanggal Barat No. 12',
+            'rt' => '01',
+            'rw' => '01',
+            'awal_mulai_usaha' => '2018-06-01',
+            'no_telp' => '08987654321',
+            'foto' => 'foto/freshprinting.jpg'
+        ]);
+        Umkm::create([
+            'id_umkm' => Str::uuid(),
+            'id_kategori' => $kategoriJasa->id_kategori,
+            'nama_usaha' => 'Fresh Printing',
+            'pemilik' => 'Bambang Abadi',
+            'usia_pemilik' => 39,
+            'pendidikan_terakhir' => 'SMA',
+            'deskripsi' => 'Jasa printing 1 jam jadi.',
+            'alamat' => 'Jl. Menanggal Barat No. 12',
+            'rt' => '01',
+            'rw' => '01',
+            'awal_mulai_usaha' => '2018-06-01',
+            'no_telp' => '08987654321',
+            'foto' => 'foto/freshprinting.jpg'
+        ]);
     }
 }

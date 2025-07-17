@@ -14,16 +14,17 @@
 
     <ul class="navbar-nav ms-auto align-items-center">
         <li class="nav-item mx-2">
-            <a class="nav-link" href="#"><i class="bi bi-bell fs-5"></i></a>
+            <a class="nav-link" href="#" id="toggleDarkMode">
+                <i class="bi bi-moon-stars fs-5"></i>
+            </a>
         </li>
-        <li class="nav-item mx-2">
-            <a class="nav-link" href="#"><i class="bi bi-chat-left-text fs-5"></i></a>
-        </li>
+
+
 
         {{-- Dropdown Profile --}}
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
-                <img src="{{ asset('images/foto-profil-admin.jpg') }}" class="rounded-circle" width="36" height="36" alt="Admin">
+                <img src="{{ asset('images/foto-admin.jpg') }}" class="rounded-circle" width="36" height="36" alt="Admin">
                 <span class="ms-2 fw-semibold text-dark">Admin</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-end shadow" style="width: 280px;">
@@ -31,7 +32,9 @@
                     <img src="{{ asset('images/foto-profil-admin.jpg') }}" class="rounded-circle mb-2" width="64" height="64" alt="Admin">
                     <h6 class="mb-0 fw-semibold py-2">Admin</h6>
                 </li>
-                <li><hr class="dropdown-divider py-2"></li>
+                <li>
+                    <hr class="dropdown-divider py-2">
+                </li>
                 <li><a class="dropdown-item d-flex align-items-center gap-2" href="#"><i class="bi bi-person"></i> Profile</a></li>
                 <li><a class="dropdown-item d-flex align-items-center gap-2" href="#"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
                 <li><a class="dropdown-item d-flex align-items-center gap-2" href="#"><i class="bi bi-clock-history"></i> Posts & Activity</a></li>
