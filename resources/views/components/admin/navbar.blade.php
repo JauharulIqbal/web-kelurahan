@@ -29,7 +29,7 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-end shadow" style="width: 280px;">
                 <li class="text-center p-3">
-                    <img src="{{ asset('images/foto-profil-admin.jpg') }}" class="rounded-circle mb-2" width="64" height="64" alt="Admin">
+                    <img src="{{ asset('images/foto-admin.jpg') }}" class="rounded-circle mb-2" width="64" height="64" alt="Admin">
                     <h6 class="mb-0 fw-semibold py-2">Admin</h6>
                 </li>
                 <li>
