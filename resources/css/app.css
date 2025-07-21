@@ -22,15 +22,15 @@ body.dark-mode {
     color: #f1f1f1;
 }
 
-/* ---------------------- */
-/* NAVBAR & MENU          */
-/* ---------------------- */
+/* DARK MODE - NAVBAR & SIDEBAR SERAGAM */
 body.dark-mode .navbar,
-body.dark-mode .bg-white,
-body.dark-mode .border-end,
-body.dark-mode .dropdown-menu {
+body.dark-mode #sidebar,
+body.dark-mode .navbar.bg-white,
+body.dark-mode #sidebar.bg-white,
+body.dark-mode .navbar .bg-white,
+body.dark-mode #sidebar .bg-white {
     background-color: #343a40 !important;
-    color: #f1f1f1 !important;
+    border-color: #495057 !important;
 }
 /* Utilitas untuk dark-mode background */
 body.dark-mode .dark-bg-dark {
@@ -987,5 +987,56 @@ body.dark-mode .form-control:-ms-input-placeholder {
 }
 
 body.dark-mode .form-control::-ms-input-placeholder {
+    color: #ced4da !important;
+}
+
+
+/* ---------------------- */
+/* DROPDOWN PROFILE       */
+/* ---------------------- */
+body.dark-mode .dropdown-menu {
+    background-color: #3a3a3a !important;
+    border-color: #6c757d !important;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175) !important;
+}
+
+body.dark-mode .dropdown-item {
+    color: #f1f1f1 !important;
+    background-color: transparent !important;
+}
+
+body.dark-mode .dropdown-item:hover,
+body.dark-mode .dropdown-item:focus {
+    background-color: #495057 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .dropdown-item.active,
+body.dark-mode .dropdown-item:active {
+    background-color: #0d6efd !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .dropdown-divider {
+    border-color: #6c757d !important;
+}
+
+body.dark-mode .dropdown-menu h6 {
+    color: #f1f1f1 !important;
+}
+
+body.dark-mode .dropdown-menu .text-muted {
+    color: #ced4da !important;
+}
+
+body.dark-mode .dropdown-menu .text-muted a {
+    color: #ced4da !important;
+}
+
+body.dark-mode .dropdown-menu .text-muted a:hover {
+    color: #f1f1f1 !important;
+}
+
+body.dark-mode .dropdown-menu .small {
     color: #ced4da !important;
 }

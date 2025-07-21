@@ -72,7 +72,7 @@
                     <label for="foto" class="form-label">
                         Foto Usaha
                         <span class="text-danger">*</span><br>
-                        <small class="text-muted">(Format: jpg, jpeg, png | Maks: 2MB)</small>
+                        <small class="text-muted">(Format: jpg, jpeg, png | Maks: 10MB)</small>
                     </label>
                     <input type="file" name="foto" id="foto" class="form-control" accept=".jpg,.jpeg,.png" required>
 

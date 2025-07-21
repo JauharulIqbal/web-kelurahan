@@ -16,11 +16,26 @@ class UmkmController extends Controller
         $query = Umkm::query();
 
         if ($request->has('search') && $request->search != '') {
-            $query->where('nama_usaha', 'like', '%' . $request->search . '%')
-                ->orWhere('pemilik', 'like', '%' . $request->search . '%');
+            $search = $request->search;
+
+            $query->where(function ($q) use ($search) {
+                $q->where('pemilik', 'like', '%' . $search . '%')
+                    ->orWhere('usia_pemilik', 'like', '%' . $search . '%')
+                    ->orWhere('pendidikan_terakhir', 'like', '%' . $search . '%')
+                    ->orWhere('nama_usaha', 'like', '%' . $search . '%')
+                    ->orWhere('deskripsi', 'like', '%' . $search . '%')
+                    ->orWhere('alamat', 'like', '%' . $search . '%')
+                    ->orWhere('rt', 'like', '%' . $search . '%')
+                    ->orWhere('rw', 'like', '%' . $search . '%')
+                    ->orWhere('no_telp', 'like', '%' . $search . '%')
+                    ->orWhere('awal_mulai_usaha', 'like', '%' . $search . '%')
+                    ->orWhereHas('kategori', function ($kategoriQuery) use ($search) {
+                        $kategoriQuery->where('nama_kategori', 'like', '%' . $search . '%');
+                    });
+            });
         }
 
-        $umkm = $umkm = $query->with('kategori')->oldest()->paginate(10);
+        $umkm = $query->with('kategori')->oldest()->paginate(10);
 
         return view('admin.umkm.view-umkm', compact('umkm'));
     }
@@ -45,7 +60,7 @@ class UmkmController extends Controller
             'id_kategori' => 'required|exists:kategori_umkm,id_kategori',
             'awal_mulai_usaha' => 'nullable|date',
             'no_telp' => 'nullable|string|max:20',
-            'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:10240',
         ]);
 
         // Proses simpan file foto jika ada
@@ -87,29 +102,38 @@ class UmkmController extends Controller
             'id_kategori' => 'required|exists:kategori_umkm,id_kategori',
             'awal_mulai_usaha' => 'nullable|date',
             'no_telp' => 'nullable|string|max:20',
-            'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:10240',
         ]);
 
         if ($request->hasFile('foto')) {
-
             if ($umkm->foto && Storage::disk('public')->exists($umkm->foto)) {
                 Storage::disk('public')->delete($umkm->foto);
             }
-            
+
             // Simpan foto baru
             $validated['foto'] = $request->file('foto')->store('foto', 'public');
         }
         $umkm->update($validated);
 
-        return redirect()->route('admin.umkm.index')->with('success', 'Data UMKM berhasil diupdate.');
+        return redirect()->route('admin.umkm.index')->with('success', 'Data UMKM berhasil diperbarui.');
     }
 
     public function destroy(string $id)
     {
-        $umkm = Umkm::findOrFail($id);
-        $umkm->delete();
+        try {
+            $umkm = Umkm::findOrFail($id);
+            
+            // Hapus foto jika ada
+            if ($umkm->foto && Storage::disk('public')->exists($umkm->foto)) {
+                Storage::disk('public')->delete($umkm->foto);
+            }
+            
+            $umkm->delete();
 
-        return redirect()->route('admin.umkm.index')->with('success', 'Data UMKM berhasil dihapus.');
+            return redirect()->route('admin.umkm.index')->with('success', 'Data UMKM "' . $umkm->nama_usaha . '" berhasil dihapus.');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.umkm.index')->with('error', 'Terjadi kesalahan saat menghapus data UMKM.');
+        }
     }
 
     public function exportPdf()

@@ -1,0 +1,260 @@
+/* Custom SweetAlert Styling with Dark Mode Support */
+
+/* Base Light Mode Styling */
+.swal2-popup {
+    border-radius: 15px !important;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2) !important;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+}
+
+.swal2-title {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #2d3748 !important;
+    margin-bottom: 1rem !important;
+}
+
+.swal2-html-container {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    color: #4a5568 !important;
+}
+
+/* Light Mode Icons */
+.swal2-icon.swal2-warning {
+    border-color: #f59e0b !important;
+    color: #f59e0b !important;
+    animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+}
+
+.swal2-icon.swal2-success {
+    border-color: #10b981 !important;
+    color: #10b981 !important;
+}
+
+.swal2-icon.swal2-error {
+    border-color: #ef4444 !important;
+    color: #ef4444 !important;
+}
+
+/* Custom button styling */
+.swal2-actions button {
+    margin: 0 0.5rem !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease-in-out !important;
+    text-transform: none !important;
+    font-size: 0.9rem !important;
+}
+
+.swal2-actions .btn-danger:hover {
+    background-color: #dc2626 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 0.25rem 0.75rem rgba(220, 38, 38, 0.3) !important;
+}
+
+.swal2-actions .btn-secondary:hover {
+    background-color: #4b5563 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 0.25rem 0.75rem rgba(75, 85, 99, 0.3) !important;
+}
+
+/* Light Mode Toast notification styling */
+.swal2-toast {
+    border-radius: 12px !important;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15) !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+}
+
+.swal2-toast .swal2-title {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #2d3748 !important;
+}
+
+/* Light Mode Custom alert box inside SweetAlert */
+.swal2-html-container .alert {
+    border-radius: 8px !important;
+    border: 1px solid #fbbf24 !important;
+    background-color: #fef3c7 !important;
+    color: #92400e !important;
+    padding: 0.75rem !important;
+    margin: 0.5rem 0 !important;
+}
+
+.swal2-html-container .alert i {
+    color: #f59e0b !important;
+}
+
+/* DARK MODE STYLES */
+.dark-mode .swal2-popup {
+    background-color: #1f2937 !important;
+    border: 1px solid #374151 !important;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark-mode .swal2-title {
+    color: #f9fafb !important;
+}
+
+.dark-mode .swal2-html-container {
+    color: #d1d5db !important;
+}
+
+/* Dark Mode Icons */
+.dark-mode .swal2-icon.swal2-warning {
+    border-color: #fbbf24 !important;
+    color: #fbbf24 !important;
+}
+
+.dark-mode .swal2-icon.swal2-success {
+    border-color: #34d399 !important;
+    color: #34d399 !important;
+}
+
+.dark-mode .swal2-icon.swal2-error {
+    border-color: #f87171 !important;
+    color: #f87171 !important;
+}
+
+/* Dark Mode Button Styling */
+.dark-mode .swal2-actions .btn-danger {
+    background-color: #dc2626 !important;
+    border-color: #dc2626 !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .swal2-actions .btn-danger:hover {
+    background-color: #b91c1c !important;
+    border-color: #b91c1c !important;
+    box-shadow: 0 0.25rem 0.75rem rgba(220, 38, 38, 0.4) !important;
+}
+
+.dark-mode .swal2-actions .btn-secondary {
+    background-color: #4b5563 !important;
+    border-color: #4b5563 !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .swal2-actions .btn-secondary:hover {
+    background-color: #374151 !important;
+    border-color: #374151 !important;
+    box-shadow: 0 0.25rem 0.75rem rgba(75, 85, 99, 0.4) !important;
+}
+
+/* Dark Mode Toast Styling */
+.dark-mode .swal2-toast {
+    background-color: #1f2937 !important;
+    border: 1px solid #374151 !important;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .swal2-toast .swal2-title {
+    color: #f9fafb !important;
+}
+
+/* Dark Mode Alert Box */
+.dark-mode .swal2-html-container .alert {
+    background-color: #451a03 !important;
+    border: 1px solid #f59e0b !important;
+    color: #fbbf24 !important;
+}
+
+.dark-mode .swal2-html-container .alert i {
+    color: #fbbf24 !important;
+}
+
+/* Dark Mode Loading Spinner */
+.dark-mode .swal2-loader {
+    border-color: #374151 !important;
+    border-top-color: #60a5fa !important;
+}
+
+/* Dark Mode Close Button */
+.dark-mode .swal2-close {
+    color: #9ca3af !important;
+}
+
+.dark-mode .swal2-close:hover {
+    color: #f9fafb !important;
+}
+
+/* Dark Mode Progress Bar (for toast notifications) */
+.dark-mode .swal2-timer-progress-bar {
+    background-color: #3b82f6 !important;
+}
+
+/* Success Toast Dark Mode */
+.dark-mode .swal2-toast.swal2-icon-success .swal2-success-ring {
+    border-color: #34d399 !important;
+}
+
+/* Error Toast Dark Mode */
+.dark-mode .swal2-toast.swal2-icon-error .swal2-x-mark {
+    color: #f87171 !important;
+}
+
+/* Loading animation */
+@keyframes swal2-rotate-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .swal2-popup {
+        width: 90% !important;
+        margin: 0 auto !important;
+    }
+    
+    .swal2-title {
+        font-size: 1.25rem !important;
+    }
+    
+    .swal2-html-container {
+        font-size: 0.9rem !important;
+    }
+    
+    .swal2-actions button {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.85rem !important;
+    }
+}
+
+/* Additional Dark Mode Enhancements */
+.dark-mode .swal2-input {
+    background-color: #374151 !important;
+    border-color: #4b5563 !important;
+    color: #f9fafb !important;
+}
+
+.dark-mode .swal2-input:focus {
+    border-color: #60a5fa !important;
+    box-shadow: 0 0 0 0.2rem rgba(96, 165, 250, 0.25) !important;
+}
+
+.dark-mode .swal2-select {
+    background-color: #374151 !important;
+    border-color: #4b5563 !important;
+    color: #f9fafb !important;
+}
+
+.dark-mode .swal2-textarea {
+    background-color: #374151 !important;
+    border-color: #4b5563 !important;
+    color: #f9fafb !important;
+}
+
+/* Dark Mode Footer */
+.dark-mode .swal2-footer {
+    border-top: 1px solid #374151 !important;
+    color: #9ca3af !important;
+}
